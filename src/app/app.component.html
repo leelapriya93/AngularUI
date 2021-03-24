@@ -1,0 +1,125 @@
+<app-header></app-header>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-7 mrgnbtm">
+      <h2>Create User</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName" id="exampleInputPassword1" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="text" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+          </div>
+        </div>
+        <button type="submit" [disabled]="!userForm.valid" class="btn btn-danger">Create</button>
+      </form>
+    </div>
+    <div class="col-md-4 mrgnbtm">
+      <app-display-board
+       [userCount]="userCount"
+       (getUsersEvent)="getAllUsers()"
+      >
+      </app-display-board>
+    </div>
+  </div>
+</div>
+<div class="mrgnbtm">
+  <app-users *ngIf="users.length !== 0" [users]="users"></app-users>
+</div> -->
+<!-- <div class='container'>
+  <div class="row">
+    <h2>Products</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i = index">
+        <td>{{product.id}}</td>
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+        <td><img src="{{product.image}}" alt="img" style="width: 100px;height: 150px;"></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div> -->
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-3">
+      <div>
+      <h5>Please select category:</h5>
+      <div *ngFor="let category of uniqueCategories; let i = index">
+        <input type="radio" id="category" name="category" value="{{category}}" 
+        (click)="filterItemsByCategory(category)">
+        <label for="category" class="radioLabel">{{category | titlecase}}</label><br>
+      </div>
+    </div>
+    <div>
+    <h5>Please select price:</h5>
+        <div *ngFor = 'let filter of priceList'>
+          <input type="checkbox"
+                [checked]="filter.checked"
+                (change)="onPriceChecked(filter)"
+              >
+              <label for="price" class="radioLabel">{{ filter.name }}</label><br>    
+              
+        </div>
+      </div>
+  </div>
+    
+
+      
+
+    
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-9">
+      <h3 class="my-4">Products</h3>
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of filteredItems">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="{{product.image}}" class="imgCenter" alt="img" ></a>
+            <div class="card-body">
+              <h6 class="card-title">
+                <a href="#">{{product.title}}</a>
+              </h6>
+              <h5>${{product.price}}</h5>
+              <p class="prodDescription">{{product.description}}</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.col-lg-9 -->
+
+  </div>
+  <!-- /.row -->
+
+</div>

@@ -1,0 +1,22 @@
+.mrgnbtm {
+  margin-top: 20px;
+}
+.imgCenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 100px;
+  height: 120px;
+}
+.prodDescription {
+  font-size: 12.5px;
+  line-height: 20px;
+  background: #fff
+}
+.list-group-item{
+  cursor: pointer;
+}
+.radioLabel {
+  margin-left: 10px;
+}
